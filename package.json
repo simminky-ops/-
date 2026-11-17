@@ -1,0 +1,36 @@
+{
+    "name":  "ad-project",
+    "version":  "0.1.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "next dev",
+                    "build":  "next build",
+                    "start":  "next start",
+                    "lint":  "eslint",
+                    "test":  "tsx --test tests/*.test.ts",
+                    "db:reset":  "tsx scripts/reset-db.ts",
+                    "inspect":  "tsx scripts/inspect.ts",
+                    "typecheck":  "tsc --noEmit -p ."
+                },
+    "dependencies":  {
+                         "clsx":  "^2.1.1",
+                         "exceljs":  "^4.4.0",
+                         "lucide-react":  "^1.73.0",
+                         "next":  "16.4.6",
+                         "react":  "19.3.0",
+                         "react-dom":  "19.3.0",
+                         "recharts":  "^3.10.1",
+                         "server-only":  "^0.0.1"
+                     },
+    "devDependencies":  {
+                            "@tailwindcss/turbopack":  "4.3.3",
+                            "@types/node":  "^26.6.6",
+                            "@types/react":  "^19",
+                            "@types/react-dom":  "^19",
+                            "eslint":  "^9",
+                            "eslint-config-next":  "16.4.6",
+                            "tailwindcss":  "4.3.3",
+                            "tsx":  "^4.23.15",
+                            "typescript":  "^5"
+                        }
+}
