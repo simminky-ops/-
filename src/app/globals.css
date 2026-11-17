@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* A-D PROJECT 디자인 토큰 */
+:root {
+  --navy: #12263f;
+  --navy-2: #1c3656;
+  --teal: #247f91;
+  --teal-soft: #e3f1f4;
+  --bg: #ffffff;
+  --bg-2: #f4f6f8;
+  --line: #e2e6eb;
+  --ink: #12263f;
+  --ink-2: #4a5b70;
+  --ink-3: #7b8899;
+  --good: #1f8a4c;
+  --good-bg: #e6f4ec;
+  --warn: #b7791f;
+  --warn-bg: #fdf3e1;
+  --bad: #c53030;
+  --bad-bg: #fde8e8;
+  /* 차트 범주 색상 (색각이상 검증 완료 — dataviz validator) */
+  --s1: #2a78d6;
+  --s2: #eb6834;
+  --s3: #1baf7a;
+  --s4: #eda100;
+  --s5: #6250d6;
+  --grid: #e8ecf0;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-bg2: var(--bg-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink-2);
+  --color-ink3: var(--ink-3);
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
+  --font-sans: "Pretendard Variable", Pretendard, "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum";
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 표 */
+.tbl {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+.tbl th {
+  position: sticky;
+  top: 0;
+  background: #f7f9fb;
+  color: var(--ink-2);
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+  z-index: 1;
+}
+.tbl td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #eef1f4;
+  white-space: nowrap;
+}
+.tbl tr:hover td {
+  background: #f8fbfc;
+}
+.tbl td.r,
+.tbl th.r {
+  text-align: right;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: #fff;
+  color: var(--ink);
+}
+.input:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: -1px;
+}
+
+/* 인쇄 / PDF (A4) */
+@page {
+  size: A4;
+  margin: 14mm 12mm;
+}
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  .print-break {
+    break-before: page;
+  }
+  .avoid-break {
+    break-inside: avoid;
+  }
+  .tbl th {
+    position: static;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
